@@ -1,4 +1,4 @@
-# randomalbumcover
+# beatbot
 Random Album cover generator
 
 
