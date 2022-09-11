@@ -14,7 +14,7 @@ import tweepy
 album_title = getAlbumTitle()        
 
 band_name = getBandName()
-    
+
 prompt_image = f"Cover art for an album called \"{album_title}\" of an artist called \"{band_name}\""
 
 output_image = image_craiyon(prompt_image)
@@ -24,6 +24,7 @@ place_title(band_name, album_title)
 sentiment = sentiment_string()
 
 review_text = review_write(band_name, album_title, sentiment)
+#print(review_text)# = "Test!"
 
 api_key = os.getenv("TWITTER_API_KEY")
 api_key_secret = os.getenv("TWITTER_API_KEY_SECRET")
@@ -39,8 +40,17 @@ def twitter_api():
     
     return api
 
+
 api = twitter_api()
+
+try:
+    api.verify_credentials()
+    print('Successful Authentication')
+except:
+    print('Failed authentication')
 
 stored_image = '/home/guimas/Documents/beatbot/output/cover.png'
 #result = api.update_status_with_media(review_text, stored_image)
+
+#result = api.update_status(status='Blip blop!')
 result = api.update_with_media(stored_image, status=review_text)
