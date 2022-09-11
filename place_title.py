@@ -12,7 +12,7 @@ def place_title(band_name, album_title):
     
     roulette = randrange(1,10)
 
-    name = f"./output/creation-{roulette}.png"
+    name = f"/home/guimas/Documents/beatbot/output/creation-{roulette}.png"
 
     img = Image.open(name)
     draw = ImageDraw.Draw(img)
@@ -44,4 +44,4 @@ def place_title(band_name, album_title):
     draw.text((x_title+1, y_title-1), album_title, font=album_name_font, fill=bg_color)
     draw.text((x_title, y_title), album_title, font=album_name_font, fill=fg_color)
 
-    img.save("./output/cover.png")
+    img.save("/home/guimas/Documents/beatbot/output/cover.png")

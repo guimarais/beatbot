@@ -14,9 +14,7 @@ def sendRequest(url, headers, data):
     resp = post(url, headers=headers, data=data)
     return loads(resp.text)['images']
 
-init(convert=True) # Without this, colored text would not work
-
-def image_craiyon(prompt, output_dir='./output/', extension='png'):
+def image_craiyon(prompt, extension='png'):
     """
     """
     
@@ -29,8 +27,6 @@ def image_craiyon(prompt, output_dir='./output/', extension='png'):
     if fileFormat.startswith('.'):
         fileFormat = fileFormat[1:]
 
-
-    directory = getcwd() + '/' + output_dir
 
     #
     url = 'https://backend.craiyon.com/generate'
@@ -53,7 +49,7 @@ def image_craiyon(prompt, output_dir='./output/', extension='png'):
         i += 1
         im = Image.open(image).resize((360, 360))
         fileName = newPrompt + f'-{i}.{fileFormat}'
-        output = directory + '/' + fileName 
+        output = '/home/guimas/Documents/beatbot/output/' + fileName 
         im.save(output)
 
     return output

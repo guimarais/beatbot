@@ -41,6 +41,6 @@ def twitter_api():
 
 api = twitter_api()
 
-stored_image = './output/cover.png'
-result = api.update_status_with_media(review_text, stored_image)
-
+stored_image = '/home/guimas/Documents/beatbot/output/cover.png'
+#result = api.update_status_with_media(review_text, stored_image)
+result = api.update_with_media(stored_image, status=review_text)
