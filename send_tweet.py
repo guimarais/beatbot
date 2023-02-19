@@ -1,5 +1,5 @@
 """
-Send a tweet from the command line with just text to test the APIs
+Send a tweet from the command line with just text to test the APIs.
 If ran in stand alone you must provide a string as sys.argv[1]
 """
 
@@ -27,6 +27,7 @@ def twitter_api():
     return api
 
 
+# Command line 
 if __name__ == "__main__":
 
     # Creates the api object
