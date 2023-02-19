@@ -4,7 +4,7 @@
 from review_openai import review_write
 from name_generators import getBandName
 from name_generators import getAlbumTitle
-from craiyon import image_craiyon
+from craiyon_image import craiyon_image
 from sentiment import sentiment_string
 from place_title import place_title
 import os
@@ -19,7 +19,7 @@ prompt_image = (
     f'Cover art for an album called "{album_title}" of an artist called "{band_name}"'
 )
 
-output_image = image_craiyon(prompt_image)
+output_image = craiyon_image(prompt_image)
 
 place_title(band_name, album_title)
 

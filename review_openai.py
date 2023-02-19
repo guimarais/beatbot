@@ -25,6 +25,7 @@ def review_write(band_name, album_title, sentiment):
 
     return response["choices"][0]["text"][2:]
 
+
 if __name__ == "__main__":
     out_str = review_write("Underworld", "Born Slippy", "positive")
     print(out_str)

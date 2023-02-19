@@ -8,18 +8,18 @@ import os
 import tweepy
 
 # Reads relevant system variables
-api_key = os.getenv("TWITTER_API_KEY")
-api_key_secret = os.getenv("TWITTER_API_KEY_SECRET")
-access_token = os.getenv("TWITTER_ACCESS_TOKEN")
-access_token_secret = os.getenv("TWITTER_ACCESS_TOKEN_SECRET")
+API_KEY = os.getenv("TWITTER_API_KEY")
+API_KEY_SECRET = os.getenv("TWITTER_API_KEY_SECRET")
+ACCESS_TOKEN = os.getenv("TWITTER_ACCESS_TOKEN")
+ACCESS_TOKEN_SECRET = os.getenv("TWITTER_ACCESS_TOKEN_SECRET")
 
 
 def twitter_api():
     """
     Creates an api object that allows authentication
     """
-    auth = tweepy.OAuthHandler(api_key, api_key_secret)
-    auth.set_access_token(access_token, access_token_secret)
+    auth = tweepy.OAuthHandler(API_KEY, API_KEY_SECRET)
+    auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 
     # Create API object
     api = tweepy.API(auth)  # , wait_on_rate_limit=True,wait_on_rate_limit_notify=True)
@@ -27,22 +27,22 @@ def twitter_api():
     return api
 
 
-# Command line 
+# Command line
 if __name__ == "__main__":
 
     # Creates the api object
-    api = twitter_api()
+    twitter_api = twitter_api()
 
     # Tries to authenticate
     try:
-        api.verify_credentials()
+        twitter_api.verify_credentials()
         print("Successful Authentication")
     except:
         print("Failed authentication")
 
     # Send the tweet if the argument for the run is a string
     # print(sys.argv[1])
-    if type(sys.argv[1]) == str:
-        result = api.update_status(status=sys.argv[1])
+    if isinstance(sys.argv[1], str):
+        RESULT = twitter_api.update_status(status=sys.argv[1])
     else:
         raise TypeError("You must tweet a string as the argument!")

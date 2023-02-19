@@ -2,3 +2,5 @@
 black *.py
 #find . -name '*.py' -exec black {} \;
 #ls '*.py' -exec black {} \;
+#
+pylint3 *.py

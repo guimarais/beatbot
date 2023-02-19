@@ -1,10 +1,12 @@
 """
+Functions for randomized outputs
 """
 from random import randrange
 
 
 def sentiment_string():
     """
+    Returns a random string with a quality (sentiment).
     """
 
     sentiment = "positive"
