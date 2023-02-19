@@ -6,19 +6,19 @@ from random import randrange
 def sentiment_string():
     """
     """
-    
-    sentiment = 'positive'
-    sentiment_int = randrange(0, 8)
+
+    sentiment = "positive"
+    sentiment_int = randrange(0, 6)
 
     if sentiment_int == 0:
-        sentiment = 'negative'
+        sentiment = "negative"
     elif sentiment_int == 1:
-        sentiment = 'mixed'
+        sentiment = "mixed"
     elif sentiment_int == 2:
-        sentiment = 'dubious'
+        sentiment = "dubious"
     elif sentiment_int == 3:
-        sentiment = 'nice'
+        sentiment = "nice"
     else:
-        sentiment = 'positive'
-        
+        sentiment = "positive"
+
     return sentiment
