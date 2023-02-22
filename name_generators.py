@@ -33,7 +33,7 @@ class MyHTMLParser(HTMLParser):
 
 
 @retry
-def getBandName():
+def get_band_name():
     """
     """
     random_wiki_url = "http://en.wikipedia.org/w/api.php?format=xml&action=query&list=random&rnnamespace=0&rnlimit=1"
@@ -55,7 +55,7 @@ def getBandName():
 
 
 @retry
-def getAlbumTitle():
+def get_album_title():
     """
     """
     random_quote_url = "http://www.quotationspage.com/random.php"
