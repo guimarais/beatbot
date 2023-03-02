@@ -9,6 +9,7 @@ from craiyon_image import craiyon_image
 from place_title import place_title
 from randomized_outputs import sentiment_string
 from randomized_outputs import cover_string
+from randomized_outputs import random_genre
 import os
 import tweepy
 
@@ -19,10 +20,11 @@ band_name = get_band_name()
 
 sentiment = sentiment_string()
 
-type_of_cover = cover_string()
+#type_of_cover = cover_string()
+type_of_cover = random_genre()
 
 prompt_image = (
-    f'{type_of_cover} cover art for a music album called "{album_title}" of a music band called "{band_name}"'
+    f'Cover art for a {type_of_cover} music album called "{album_title}" of a music band called "{band_name}"'
 )
 
 output_image = craiyon_image(prompt_image, output_dir="/home/guimas/Documents/beatbot/output/")

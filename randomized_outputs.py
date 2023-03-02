@@ -1,8 +1,9 @@
 """
 Functions for randomized outputs
 """
-from random import randrange
 
+from random import randrange
+from random import choice
 
 def sentiment_string():
     """
@@ -47,4 +48,19 @@ def cover_string():
 
     return sentiment
 
+
+def random_genre():
+    """
+    Chooses a random music genre taken from:
+    https://gist.githubusercontent.com/sampsyo/1241307/raw/208ab2e4b5b576ebc51d801b039f93ee2bbc33ea/genres.txt
+    """
+
+    # Remove the \n
+    genre = choice(list(open('genres.txt')))[:-1]
+
+    return genre
+
+
+if __name__=="__main__":
+    print(random_genre())
 
