@@ -6,8 +6,9 @@ from send_tweet import twitter_api
 from name_generators import get_band_name
 from name_generators import get_album_title
 from craiyon_image import craiyon_image
-from randomized_outputs import sentiment_string
 from place_title import place_title
+from randomized_outputs import sentiment_string
+from randomized_outputs import cover_string
 import os
 import tweepy
 
@@ -16,15 +17,17 @@ album_title = get_album_title()
 
 band_name = get_band_name()
 
+sentiment = sentiment_string()
+
+type_of_cover = cover_string()
+
 prompt_image = (
-    f'Abstract cover art for a music album called "{album_title}" of a music band called "{band_name}"'
+    f'{type_of_cover} cover art for a music album called "{album_title}" of a music band called "{band_name}"'
 )
 
 output_image = craiyon_image(prompt_image, output_dir="/home/guimas/Documents/beatbot/output/")
 
-#place_title(band_name, album_title)
-
-sentiment = sentiment_string()
+place_title(band_name, album_title)
 
 review_text = prompt_image  # review_write(band_name, album_title, sentiment)a
 # print(review_text)# = "Test!"
