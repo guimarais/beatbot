@@ -56,7 +56,7 @@ def random_genre():
     """
 
     # Remove the \n
-    genre = choice(list(open('genres.txt')))[:-1]
+    genre = choice(list(open('/home/guimas/Documents/beatbot/genres.txt')))[:-1]
 
     return genre
 
