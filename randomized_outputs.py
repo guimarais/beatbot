@@ -55,8 +55,8 @@ def random_genre():
     https://gist.githubusercontent.com/sampsyo/1241307/raw/208ab2e4b5b576ebc51d801b039f93ee2bbc33ea/genres.txt
     """
 
-    # Remove the \n
-    genre = choice(list(open('/home/guimas/Documents/beatbot/genres.txt')))[:-1]
+    # Gets the 
+    genre = choice(list(open('$(HOME)/.beatbot/genres.txt')))[:-1]
 
     return genre
 

@@ -128,6 +128,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Images inside output/
+# Logs inside output/
 output/*
 
+# Images inside images/
