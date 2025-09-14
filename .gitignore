@@ -132,3 +132,4 @@ dmypy.json
 output/*
 
 # Images inside images/
+images/*
